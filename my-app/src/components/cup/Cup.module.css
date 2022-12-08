@@ -1,0 +1,10 @@
+* {
+  background-color: aquamarine;
+}
+
+.line {
+  width: 70px;
+  display: flex;
+  font: 1em sans-serif;
+  background-color: blue;
+}

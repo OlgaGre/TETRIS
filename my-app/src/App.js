@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Cup from './components/cup/Cup'
 
-function App() {
+function App(props) {
   return (
- <div> check gh-pages</div>
+ <Cup
+ markupCup = {props.state._cup}
+ />
   );
 }
 
