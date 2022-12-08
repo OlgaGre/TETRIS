@@ -1,3 +1,4 @@
+import BtnStartPause from './btnStartPause/BtnStartPause';
 import Lines from './lines/Lines';
 import NextFigure from './nextFigure/NextFigure';
 import styles from './Statistics.module.css'
@@ -17,6 +18,7 @@ lines = {props.state._lines}
 <Timer
 timer = {props.state._timer}
 />
+<BtnStartPause />
 
     </div>
     )
