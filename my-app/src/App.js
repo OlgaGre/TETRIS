@@ -5,10 +5,10 @@ import Statistics from './components/statistics/Statistics'
 
 function App(props) {
   return (
-    <div>
- {/* <Cup
+    <div className='game'>
+ <Cup
  markupCup = {props.state._cup}
- /> */}
+ />
  <Statistics 
  state = {props.state}
  />

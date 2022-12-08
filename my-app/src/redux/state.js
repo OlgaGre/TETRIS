@@ -29,6 +29,7 @@ let store = {
     [0,0,0,0]
   ],
   _lines: 0,
+  _timer:0,
   
 },
  

@@ -1,6 +1,7 @@
 import Lines from './lines/Lines';
 import NextFigure from './nextFigure/NextFigure';
 import styles from './Statistics.module.css'
+import Timer from './timer/Timer';
 
 const Statistics = (props) => {
 
@@ -12,6 +13,9 @@ nextFigure = {props.state._nextFigure}
 <Lines 
 lines = {props.state._lines}
 
+/>
+<Timer
+timer = {props.state._timer}
 />
 
     </div>
