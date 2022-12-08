@@ -10,6 +10,7 @@ function App(props) {
  markupCup = {props.state._cup}
  />
  <Statistics 
+ dispatch = {props.dispatch}
  state = {props.state}
  />
  </div>
