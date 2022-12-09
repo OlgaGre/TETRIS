@@ -8,7 +8,8 @@ const Cup = (props) => {
       ))}
     </div>
   ));
-  console.log(props.markupCup);
+  // console.log(props.markupCup);
   return <div className={styles.cup}>{buildMarkupCup}</div>;
 };
 export default Cup;
+// 

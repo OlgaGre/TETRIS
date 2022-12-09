@@ -1,5 +1,5 @@
 const timerStart = "TIMER-START";
-
+const timerPause = "TIMER-PAUSE";
 let store = {
   _state: {
     _cup: [
@@ -32,20 +32,37 @@ let store = {
     ],
     _lines: 0,
     _timer: 0,
+    _checkedTimer: false,
   },
 
   getState() {
     return this._state;
   },
+
+  _funcTimerStart() {},
   dispatch(action) {
-    if (action.type === timerStart) {
-      setInterval(() => {
-        // console.log("+1");
-        this._state._timer = this._state._timer + 1;
-        console.log(this._state._timer)
-        this._callSubscriber(this._state);
-      }, 1000);
+    let tick = () => {
      
+      setInterval(()=>{
+        if (!this._state._checkedTimer) {
+          clearInterval(tick)
+          return
+        }
+        this._state._timer = this._state._timer + 1
+        this._callSubscriber(this._state)}
+        , 1000);
+     
+    };
+    switch (action.type) {
+      case timerStart:
+       tick()
+        this._state._checkedTimer = true;
+        break;
+      case timerPause:     
+        this._state._checkedTimer = false;
+        this._callSubscriber(this._state);
+        
+        break;
     }
   },
   _callSubscriber() {
@@ -60,6 +77,6 @@ export default store;
 // export const objTimerStart =(){
 //   return {
 //     type: timerStart,
-   
+
 //   };
 // }

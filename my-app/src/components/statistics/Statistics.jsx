@@ -9,8 +9,12 @@ const Statistics = (props) => {
     <div className={styles.statistics}>
       <NextFigure nextFigure={props.state._nextFigure} />
       <Lines lines={props.state._lines} />
-      <Timer timer={props.state._timer} />
-      <BtnStartPause dispatch={props.dispatch} />
+      <Timer
+        timer={props.state._timer}
+       
+      />
+      <BtnStartPause dispatch={props.dispatch} 
+       checkedTimer={props.state._checkedTimer}/>
     </div>
   );
 };

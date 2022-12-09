@@ -2,7 +2,7 @@ import styles from './NextFigure.module.css'
 
 const NextFigure = (props) => {
 
-  console.log(props.nextFigure)
+  // console.log(props.nextFigure)
     
  let buildNextFigute = props.nextFigure.map((el) => (
     <div className={styles.line}>
@@ -11,7 +11,7 @@ const NextFigure = (props) => {
       ))}
     </div>
   ));
-  console.log(props.nextFigure);
+  // console.log(props.nextFigure);
   return <div className={styles.cup}>{buildNextFigute}</div>;
 
 
