@@ -33,6 +33,32 @@ let store = {
     _lines: 0,
     _timer: 0,
     _checkedTimer: false,
+    _figures: [
+      [
+        [0, 1, 0, 0],
+        [0, 1, 0, 0],
+        [0, 1, 0, 0],
+        [0, 1, 0, 0],
+      ],
+      [
+        [0, 1, 1, 1],
+        [0, 0, 1, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+      ],
+      [
+        [1, 1, 0, 0],
+        [1, 1, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+      ],
+      [
+        [0, 1, 0, 0],
+        [0, 1, 0, 0],
+        [1, 1, 0, 0],
+        [0, 0, 0, 0],
+      ],
+    ],
   },
 
   getState() {
@@ -42,26 +68,24 @@ let store = {
   _funcTimerStart() {},
   dispatch(action) {
     let tick = () => {
-     
-      setInterval(()=>{
+      setInterval(() => {
         if (!this._state._checkedTimer) {
-          clearInterval(tick)
-          return
+          clearInterval(tick);
+          return;
         }
-        this._state._timer = this._state._timer + 1
-        this._callSubscriber(this._state)}
-        , 1000);
-     
+        this._state._timer = this._state._timer + 1;
+        this._callSubscriber(this._state);
+      }, 1000);
     };
     switch (action.type) {
       case timerStart:
-       tick()
+        tick();
         this._state._checkedTimer = true;
         break;
-      case timerPause:     
+      case timerPause:
         this._state._checkedTimer = false;
         this._callSubscriber(this._state);
-        
+
         break;
     }
   },
